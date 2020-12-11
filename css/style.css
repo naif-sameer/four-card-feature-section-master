@@ -171,7 +171,7 @@ template {
     font-size: 30px; }
   .container > p {
     font-size: 18px;
-    color: #505454;
+    color: rgba(80, 84, 84, 0.6);
     margin: 25px 0; }
 
 .card {
@@ -198,7 +198,7 @@ template {
   .card p {
     font-size: 14px;
     width: 89%;
-    color: #505454;
+    color: rgba(80, 84, 84, 0.6);
     font-weight: 600; }
   .card img {
     position: relative;
@@ -208,7 +208,7 @@ template {
 footer .attribution {
   font-size: 14px;
   text-align: center;
-  color: #505454; }
+  color: rgba(80, 84, 84, 0.6); }
   footer .attribution a {
     color: #3e52a3;
     text-decoration: none;
