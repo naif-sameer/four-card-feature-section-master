@@ -1,0 +1,199 @@
+@import "normalize";
+
+////////////////
+$fs: 20;
+$second-color: rgb(80, 84, 84);
+
+%lh{
+  line-height: 1.5;
+}
+
+%margin-center{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/////////////
+
+*{
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container{
+  padding-top: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 375px;
+  margin: auto;
+
+  h2{
+    margin: 10px 0;
+  }
+  h2:first-of-type{
+    font-size: $fs + 8px;
+    color: rgba(0,0,0,.58);
+  }
+
+  h2:last-of-type{
+    color: #000;
+    font-size: $fs + 10px;
+  }
+
+  & > p{
+    @extend %lh;
+    font-size: 18px;
+    color: $second-color;
+    margin: 25px 0;
+  }
+}
+.card{
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+  .card-item{
+    @extend %margin-center;
+
+    box-shadow: 0 4px 12px 0px rgba(0, 0, 0, 0.31);
+    border-top: 5px solid;
+    margin-bottom: 33px;
+    padding: 32px;
+    border-radius: 7px;
+    max-width: 90%;
+
+  }
+  .card-item:nth-of-type(1){
+    border-color: hsl(180, 62%, 55%)
+  }
+  .card-item:nth-of-type(2){
+    border-top-color: hsl(0, 78%, 62%)
+  }
+  .card-item:nth-of-type(3){
+    border-color: hsl(34, 97%, 64%)
+  }
+  .card-item:nth-of-type(4){
+    border-color: hsl(212, 86%, 64%)
+  } 
+    h3{
+      font-size: $fs + 5px;
+      margin: 0
+    }
+
+    p{
+      @extend %lh;
+      font-size: ($fs - 6)+px;
+      width: 89%;
+      color: $second-color;
+      font-weight: 600;
+    }
+
+    img{
+      position: relative;
+      left: 100%;
+      transform: translateX(-100%);
+    }
+}
+
+footer{
+  .attribution {
+    font-size: 14px;
+    text-align: center;
+    color: $second-color;
+    
+    a {
+     color: rgb(62, 82, 163);
+     text-decoration: none;
+     font-weight: 700;
+     transition: color .3s linear;
+
+     &:hover{
+       color: hsl(0, 78%, 62%)
+     }
+    }
+  }
+}
+
+@media (max-width: 399px){
+  .container{
+    h2{
+      font-size: 23px !important;
+    }
+}
+  .card .card-item h3{
+    font-size: 20px;
+  }
+
+  footer p{
+    font-size: 12px !important;
+  }
+}
+
+@media (min-width: 400px){
+  .container{
+    max-width: 95%;
+    text-align: center;
+
+  }
+  .card-item{
+    max-width: 400px !important;
+  }
+}
+@media (min-width: 768px){
+  body .container{
+    max-width: 600px;
+  }
+
+  .card{
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 90%;
+
+    .card-item{
+      flex-basis: 46%;
+      margin-left: 2%;
+      margin-right: 2%;
+    }
+  }
+}
+
+@mixin t-f($x,$y) {
+  transform: translate($x,$y);
+}
+
+@media (min-width: 1360px){
+  .card{
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1500px;
+
+    .card-item{
+      padding-bottom: 0;
+      margin-right: 0;
+      margin-left: 0;
+
+      &:nth-of-type(1){
+        @include t-f(-5% ,70%);
+      }
+      &:nth-of-type(2){
+        @include t-f(0 ,0);
+      }
+      &:nth-of-type(3){
+        @include t-f(5% ,70%);
+      }
+
+      img{
+        margin-top: 20px;
+        display: inline-block;
+        padding-bottom: 10px;
+      }
+    }
+  }
+  
+  footer{
+    width: 100%;
+  }
+}
